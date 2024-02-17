@@ -8,8 +8,14 @@ const Login = () => {
 
     const handleGoogleSignIn = () =>{
         signInWithPopup(auth, provider)
-        .then()
-        .catch()
+        .then(result => {
+            const user = result.user;
+            console.log(user)
+
+        })
+        .catch(error =>{
+            console.log('error', error.message)
+        })
 
     }
     return (
