@@ -1,12 +1,13 @@
 /* eslint-disable no-unused-vars */
-import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
 import app from "../../Firebase/firebase.init";
 import { useState } from "react";
 
 const Login = () => {
     const [user, setUser] = useState(null);
     const auth = getAuth(app);
-    const provider = new GoogleAuthProvider();
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
     const handleGoogleSignIn = () =>{
         signInWithPopup(auth, provider)
