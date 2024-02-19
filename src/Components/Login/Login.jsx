@@ -11,7 +11,7 @@ const Login = () => {
     const githubProvider = new GithubAuthProvider();
 
     const handleGoogleSignIn = () =>{
-        signInWithPopup(auth, provider)
+        signInWithPopup(auth, googleProvider)
         .then(result => {
             const loggedInUser = result.user;
             console.log(loggedInUser);
@@ -70,3 +70,4 @@ const Login = () => {
 };
 
 export default Login
+
