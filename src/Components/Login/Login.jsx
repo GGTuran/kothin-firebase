@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
 import app from "../../Firebase/firebase.init";
@@ -23,6 +24,10 @@ const Login = () => {
 
     }
 
+    const handleGithubSignIn = () =>{
+        signInWithPopup(auth, githubProvider)
+    }
+
     const handleSignOut = () =>{
         signOut(auth)
         .then(result => {
@@ -38,7 +43,12 @@ const Login = () => {
             { 
               user ? 
             <button onClick={handleSignOut}>Sign Out</button> :
-            <button onClick={handleGoogleSignIn}>Google login</button>}
+            <>
+            <button onClick={handleGoogleSignIn}>Google login</button>
+            <button onClick={handleGithubSignIn}>Github login</button>
+            </>
+            
+            }
             {
                  user && <div>
                     <h3>User : {user.displayName}</h3>
