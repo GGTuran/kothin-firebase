@@ -61,7 +61,7 @@ const Login = () => {
                     <h3>User : {user.displayName}</h3>
                     <p>User mail : {user.email}</p>
                     <img src={user.photoURL} alt="" />
-                    <p>GGTuran wants you know that he loves you</p>
+                    <p>GGTuran wants you to know that he loves you</p>
 
                  </div>
             }
